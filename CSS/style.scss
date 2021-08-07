@@ -1,14 +1,17 @@
 @charset "UFT-8";
 
 :root {
-  --main-color: #5D9AB2;
+  --main-color: #434343;
   --accent-color: #BF6A7A;
   --dark-color: #2B5566;
   --text-bright-color: #fff;
   --icon-color: #fff;
   --icon-back-color: #ddd;
   --side-bar: #b8b8b8;
-  --large-width: 1000px;
+  --large-width: 960px;
+  --padding-top: 10%;
+  --padding-left: 8%;
+  
 }
 
 body {
@@ -24,7 +27,7 @@ body {
 // 右左の合わせたコンテナ
 .main_container {
   width: 100vw;
-  max-width: 960px;
+  max-width: var(--large-width);
   margin: 0  auto;
   display: flex;
   background-color: var(--main-color);
@@ -39,15 +42,16 @@ body {
       width: 170px;
       padding: 15px;
       img {
+        display: block;
         width: 100%;
         height: 150px;
         object-fit: cover;
         border: solid black 1px;
+        border-bottom: none;
       }
       .text {
         width: 100%;
         border: solid black 1px;
-        margin-top: -7px;
         background-color: var(--text-bright-color);
 
         h1 {
@@ -74,23 +78,87 @@ body {
     background-color: var(--dark-color);
     // 画像集
     .image_corection {
-      padding-top: 80px;
-      padding-left: 80px;
-      // display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
-      // grid-template-rows: 100px 100px;
-      // .image1 {
-
-      // }
-      // .image2 {
-        
-      // }
-      // .image3 {
-        
-      // }
-      // .image4 {
-
-      // }
+      padding-top: 10%;
+      padding-left: 8%;
+      padding-bottom: 3%;
+      width: calc(100% - 8%);
+      aspect-ratio: 10/4;
+      .img {
+        display: block;
+        object-fit: cover;
+        float: left;
+      }
+      .image1 {
+        width: 40%;
+        height: 100%;
+        object-position: 50% 30%;
+      }
+      .image2 {
+        width: 60%;
+        height: 50%;
+        object-position: 50% 83%;
+      }
+      .image3 {
+        width: 30%;
+        height: 50%;
+      }
+      .image4 {
+        width: 30%;
+        height: 50%;
+      }
+    }
+    // YouTube
+    .YouTube {
+      padding-top: 10%;
+      padding-left: 8%;
+      padding-bottom: 3%;
+      width: calc(100% - 8%);
+      .youtube_image {
+        width: 100%;
+        aspect-ratio: 16/9;
+      }
+    }
+    // 新着情報
+    .news {
+      padding-top: 10%;
+      padding-bottom: 3%;
+      .news_container {
+        display: flex;
+        align-items: center;
+        background-color: var(--main-color);
+        padding: 5% 0;
+        color: var(--text-bright-color);
+        .news_title {
+          width: 22%;
+          padding-left: 8%;
+          display: inline-block;
+          position: relative;
+        }
+        .news_title::before {
+          content: '';
+          position: absolute;
+          // left: 50%;
+          bottom: -7px;/*線の上下位置*/
+          display: inline-block;
+          width: 30px;/*線の長さ*/
+          height: 3px;/*線の太さ*/
+          // -webkit-transform: translateX(-50%);
+          // transform: translateX(-50%);/*位置調整*/
+          background-color: var(--text-bright-color);/*線の色*/
+          // border-radius: 2px;/*線の丸み*/
+          margin-left: 18px;
+        }
+        ul {
+          width: 62%;
+          padding-left: 8%;
+          margin: 0;
+          border-left: solid var(--text-bright-color) 3px;
+          li {
+            margin-top: 3%;
+            margin-bottom: 3%;
+          }
+        }
+      }
     }
   }
 }
