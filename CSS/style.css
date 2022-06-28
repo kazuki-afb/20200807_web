@@ -8,12 +8,17 @@
   --icon-back-color: #ddd;
   --side-bar: #b8b8b8;
   --large-width: 960px;
-  --padding-top: 10%;
-  --padding-left: 8%;
+  --section_padding-top: 10%;
+  --section_padding-side: 8%;
+  --section_padding-bottom: 3%;
+  --header-ribon: #b0824a;
+  --link-botton: #aca065;
+  --shadow-color: rgba(0,0,0,0.5);
 }
 
 body {
   margin: 0;
+  font-size: 16px;
 }
 
 .top_image {
@@ -34,25 +39,25 @@ body {
 }
 
 .main_container .left_container {
-  width: 200px;
+  width: 20%;
   height: 100vh;
   background-color: var(--side-bar);
 }
 
 .main_container .left_container .left_contents {
   margin-top: 5px;
-  width: 170px;
+  width: calc(100% - 30px);
   padding: 15px;
 }
 
 .main_container .left_container .left_contents img {
   display: block;
   width: 100%;
-  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
   border: solid black 1px;
   border-bottom: none;
+  aspect-ratio: 1/1;
 }
 
 .main_container .left_container .left_contents .text {
@@ -65,12 +70,12 @@ body {
   margin: 0;
   padding-left: 5px;
   padding-top: 5px;
-  font-size: 16px;
+  font-size: 1em;
 }
 
 .main_container .left_container .left_contents .text p {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.5em;
   font-weight: bold;
   text-align: end;
   padding-right: 5px;
@@ -78,16 +83,16 @@ body {
 }
 
 .main_container .right_container {
-  width: calc(100% - 200px);
+  width: 80%;
   height: 100%;
   background-color: var(--dark-color);
 }
 
 .main_container .right_container .image_corection {
-  padding-top: 10%;
-  padding-left: 8%;
-  padding-bottom: 3%;
-  width: calc(100% - 8%);
+  padding-top: var(--section_padding-top);
+  padding-left: var(--section_padding-side);
+  padding-bottom: var(--section_padding-bottom);
+  width: calc(100% - var(--section_padding-side));
   aspect-ratio: 10/4;
 }
 
@@ -123,10 +128,10 @@ body {
 }
 
 .main_container .right_container .YouTube {
-  padding-top: 10%;
-  padding-left: 8%;
-  padding-bottom: 3%;
-  width: calc(100% - 8%);
+  padding-top: var(--section_padding-top);
+  padding-left: var(--section_padding-side);
+  padding-bottom: var(--section_padding-bottom);
+  width: calc(100% - var(--section_padding-side));
 }
 
 .main_container .right_container .YouTube .youtube_image {
@@ -135,8 +140,8 @@ body {
 }
 
 .main_container .right_container .news {
-  padding-top: 10%;
-  padding-bottom: 3%;
+  padding-top: var(--section_padding-top);
+  padding-bottom: var(--section_padding-bottom);
 }
 
 .main_container .right_container .news .news_container {
@@ -183,5 +188,115 @@ body {
 .main_container .right_container .news .news_container ul li {
   margin-top: 3%;
   margin-bottom: 3%;
+}
+
+.main_container .right_container .recommend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: var(--section_padding-top);
+  padding-left: var(--section_padding-side);
+  padding-right: var(--section_padding-side);
+  padding-bottom: var(--section_padding-bottom);
+}
+
+.main_container .right_container .recommend .recommend_image {
+  width: calc(50% - 3%);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.main_container .right_container .recommend .recommend_text {
+  width: 50%;
+  padding-left: 3%;
+}
+
+.main_container .right_container .recommend .recommend_text h1 {
+  background-color: var(--header-ribon);
+  color: var(--text-bright-color);
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-size: 1.2rem;
+}
+
+.main_container .right_container .recommend .recommend_text p {
+  margin: 0;
+  padding-left: 3%;
+}
+
+.main_container .right_container .recommend .recommend_text .botton_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30%;
+}
+
+.main_container .right_container .recommend .recommend_text .botton_box a {
+  display: inline-block;
+  background-color: var(--link-botton);
+  color: var(--text-bright-color);
+  text-decoration: none;
+  width: 45%;
+  text-align: center;
+  line-height: 2.5rem;
+  -webkit-box-shadow: 5px 5px 15px 0 var(--shadow-color);
+          box-shadow: 5px 5px 15px 0 var(--shadow-color);
+}
+
+.main_container .right_container .recommend .recommend_text .botton_box :hover {
+  cursor: pointer;
+  width: 46%;
+  line-height: 2.6rem;
+  padding-right: 1%;
+}
+
+.main_container .right_container .merukaso {
+  padding-top: var(--section_padding-top);
+  padding-left: var(--section_padding-side);
+  padding-bottom: var(--section_padding-bottom);
+  width: calc(100% - var(--section_padding-side));
+  background-color: var(--main-color);
+}
+
+.main_container .right_container .merukaso .merukaso_container {
+  padding-right: var(--section_padding-side);
+}
+
+.main_container .right_container .merukaso .merukaso_container .merukaso_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main_container .right_container .merukaso .merukaso_container .merukaso_contents .merukaso_content {
+  width: 30%;
+}
+
+.main_container .right_container .merukaso .merukaso_container .merukaso_contents .merukaso_content .merukaso_image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+  display: block;
+}
+
+.main_container .right_container .merukaso .merukaso_container .merukaso_contents .merukaso_content p {
+  background-color: var(--text-bright-color);
+  margin: 0;
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  height: 2.2rem;
 }
 /*# sourceMappingURL=style.css.map */
